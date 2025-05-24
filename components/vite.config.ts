@@ -9,6 +9,7 @@ export default defineConfig({
       entry: path.resolve(__dirname, "src/lib/index.ts"),
       name: "index",
       fileName: "index",
+      formats: ["es"],
     },
     rollupOptions: {
       external: ["react"],
