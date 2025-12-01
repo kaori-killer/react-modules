@@ -1,6 +1,10 @@
-import validateNumber from "./validateNumber";
 import validateMaxLength from "./validateMaxLength";
-import { validationMessages } from "../../constants/validationMessages";
+import validateNumber from "./validateNumber";
+
+import {
+  staticValidationMessages,
+  dynamicValidationMessages,
+} from "../../constants/validationMessages";
 
 type ValidationResult = {
   isValid: boolean;
@@ -17,13 +21,16 @@ export const checkBasicValidation = ({
   maxLength,
 }: checkBasicValidationProps): ValidationResult => {
   if (!validateNumber(value)) {
-    return { isValid: false, errorMessage: validationMessages.numberOnly };
+    return {
+      isValid: false,
+      errorMessage: staticValidationMessages.numberOnly,
+    };
   }
 
   if (!validateMaxLength(value, maxLength)) {
     return {
       isValid: false,
-      errorMessage: validationMessages.limitedLength(maxLength),
+      errorMessage: dynamicValidationMessages.limitedLength(maxLength),
     };
   }
   return { isValid: true, errorMessage: null };

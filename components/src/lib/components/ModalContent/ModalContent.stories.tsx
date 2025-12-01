@@ -25,11 +25,8 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
-    children: "",
+    children: "모달 컨텐츠입니다.",
     position: "center",
-  },
-
-  render: (args) => {
-    return <ModalContent {...args}>모달 컨텐츠입니다.</ModalContent>;
+    size: "small",
   },
 };

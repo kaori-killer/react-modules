@@ -1,9 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
 
 import ModalCloseButton from "./ModalCloseButton";
-import Modal from "../Modal/Modal";
-import ModalHeader from "../ModalHeader/ModalHeader";
-import ModalTitle from "../ModalTitle/ModalTitle";
 
 const meta = {
   title: "ModalCloseButton",

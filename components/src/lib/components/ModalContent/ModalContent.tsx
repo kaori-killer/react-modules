@@ -2,9 +2,16 @@ import { StyledModalContent } from "./ModalContent.styled";
 
 import { ModalContentProps } from "./ModalContent.types";
 
-const ModalContent = ({ children, position = "center" }: ModalContentProps) => {
+const ModalContent = ({
+  children,
+  position = "center",
+  size = "medium",
+  ...props
+}: ModalContentProps) => {
   return (
-    <StyledModalContent position={position}>{children}</StyledModalContent>
+    <StyledModalContent position={position} size={size} {...props}>
+      {children}
+    </StyledModalContent>
   );
 };
 

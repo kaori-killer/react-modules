@@ -25,9 +25,9 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    children: "제목이다!",
     fontSize: "40px",
     fontWeight: "bold",
     tag: "h1",
-    children: "제목이다!",
   },
 };

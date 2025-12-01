@@ -5,7 +5,7 @@ import { ModalHeaderProps } from "./ModalHeader.types";
 export const StyledModalHeader = styled.header<ModalHeaderProps>`
   position: relative;
   display: flex;
-  flex-direction: ${({ direction = "row" }) => direction};
-  align-items: ${({ align = "start" }) => align};
-  justify-content: ${({ justify = "start" }) => justify};
+  flex-direction: ${({ direction }) => direction};
+  align-items: ${({ align }) => align};
+  justify-content: ${({ justify }) => justify};
 `;

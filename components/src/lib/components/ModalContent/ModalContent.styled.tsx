@@ -4,8 +4,9 @@ import { ModalContentProps } from "./ModalContent.types";
 
 const modalPositionVariants = {
   bottom: {
-    left: "0",
+    left: "50%",
     bottom: "0",
+    transform: "translateX(-50%)",
     width: "100%",
     borderTopLeftRadius: "8px",
     borderTopRightRadius: "8px",
@@ -19,14 +20,26 @@ const modalPositionVariants = {
   },
 };
 
+const modalSizeVariants = {
+  small: {
+    width: "40%",
+  },
+  medium: {
+    width: "60%",
+  },
+  large: {
+    width: "80%",
+  },
+};
+
 export const StyledModalContent = styled.div<ModalContentProps>`
   position: fixed;
   padding: 24px 32px;
   min-height: 216px;
   background-color: #fff;
-  border: 1px solid red;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  ${({ position = "center" }) => modalPositionVariants[position]};
+  ${({ position }) => modalPositionVariants[position]};
+  ${({ size }) => modalSizeVariants[size]}
 `;

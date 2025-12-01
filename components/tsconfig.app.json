@@ -12,7 +12,8 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "allowSyntheticDefaultImports": true,
-    "isolatedModules": true
+    "isolatedModules": true,
+    "noImplicitAny": true,
   },
   "include": ["src", "src/lib"],
   "exclude": ["node_modules", "dist"]

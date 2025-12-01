@@ -2,8 +2,8 @@ import { StyledModalOverlay } from "./ModalOverlay.styled";
 
 import { ModalOverlayProps } from "./ModalOverlay.types";
 
-const ModalOverlay = ({ onClose }: ModalOverlayProps) => {
-  return <StyledModalOverlay onClick={onClose} />;
+const ModalOverlay = ({ isOpen, onClose }: ModalOverlayProps) => {
+  return <StyledModalOverlay aria-hidden={!isOpen} onClick={onClose} />;
 };
 
 export default ModalOverlay;

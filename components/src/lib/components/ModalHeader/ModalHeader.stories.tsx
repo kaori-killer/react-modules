@@ -25,10 +25,10 @@ type Story = StoryObj<typeof meta>;
 
 export const Default: Story = {
   args: {
+    children: "자식 요소",
     direction: "row",
     align: "center",
     justify: "center",
-    children: "자식 요소",
   },
   argTypes: {
     children: {

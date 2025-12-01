@@ -2,16 +2,11 @@ import createStyledModalTitle from "./ModalTitle.styled";
 
 import { ModalTitleProps } from "./ModalTitle.types";
 
-const ModalTitle = ({
-  children,
-  fontSize,
-  fontWeight,
-  tag = "h1",
-}: ModalTitleProps) => {
+const ModalTitle = ({ children, tag = "h1", ...props }: ModalTitleProps) => {
   const StyledModalTitle = createStyledModalTitle(tag);
 
   return (
-    <StyledModalTitle fontSize={fontSize} fontWeight={fontWeight}>
+    <StyledModalTitle id="modal-title" tag={tag} {...props}>
       {children}
     </StyledModalTitle>
   );

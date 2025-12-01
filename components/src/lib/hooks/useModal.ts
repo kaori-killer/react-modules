@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
+
+import useKeyboardEffect from "./utils/useKeyboardEffect";
 
 const useModal = (): {
   isOpen: boolean;
@@ -7,14 +9,6 @@ const useModal = (): {
 } => {
   const [isOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    if (isOpen) {
-      window.addEventListener("keydown", handleClose);
-    }
-
-    return () => window.removeEventListener("keydown", handleClose);
-  }, [isOpen]);
-
   const handleOpen = () => {
     setIsOpen(true);
   };
@@ -22,6 +16,12 @@ const useModal = (): {
   const handleClose = () => {
     setIsOpen(false);
   };
+
+  useKeyboardEffect({
+    key: "Escape",
+    handler: handleClose,
+    enabled: isOpen,
+  });
 
   return { isOpen, handleOpen, handleClose };
 };

@@ -1,11 +1,9 @@
 import { useState } from "react";
 
-import validateNumber from "../utils/validateNumber";
-import validateMaxLength from "../utils/validateMaxLength";
-import validateRange from "../utils/validateRange";
+import validateRange from "../../utils/validateRange";
+import { checkBasicValidation } from "../../utils/checkBasicValidation";
 
-import { validationMessages } from "../../constants/validationMessages";
-import { checkBasicValidation } from "../utils/checkBasicValidation";
+import { staticValidationMessages } from "../../../constants/validationMessages";
 
 type CardExpireDate = {
   month: string;
@@ -37,7 +35,7 @@ const useCardExpireDateValidate = () => {
         [key]: result.isValid,
       }));
       setErrorMessage(result.errorMessage);
-      return;
+      return result.isValid;
     }
 
     if (key === "month" && expireDate[key].length === 2) {
@@ -53,8 +51,8 @@ const useCardExpireDateValidate = () => {
           month: false,
         });
 
-        setErrorMessage(validationMessages.rangeMonth);
-        return;
+        setErrorMessage(staticValidationMessages.rangeMonth);
+        return false;
       }
     }
 
@@ -71,8 +69,8 @@ const useCardExpireDateValidate = () => {
           year: false,
         });
 
-        setErrorMessage(validationMessages.invalidYear);
-        return;
+        setErrorMessage(staticValidationMessages.invalidYear);
+        return false;
       }
     }
 
@@ -89,8 +87,8 @@ const useCardExpireDateValidate = () => {
         month: false,
       });
 
-      setErrorMessage(validationMessages.invalidExpire);
-      return;
+      setErrorMessage(staticValidationMessages.invalidExpire);
+      return false;
     }
 
     setIsValid({
@@ -99,6 +97,7 @@ const useCardExpireDateValidate = () => {
     });
 
     setErrorMessage(null);
+    return true;
   };
 
   return { isValid, errorMessage, validateCardExpireDate };

@@ -6,7 +6,7 @@ interface ModalBodyProps {
   children: ReactNode;
 }
 const ModalBody = ({ children }: ModalBodyProps) => {
-  return <StyledModalBody>{children}</StyledModalBody>;
+  return <StyledModalBody id="modal-description">{children}</StyledModalBody>;
 };
 
 export default ModalBody;

@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-import { checkBasicValidation } from "../utils/checkBasicValidation";
+import { checkBasicValidation } from "../../utils/checkBasicValidation";
 
 const useCardCVCValidate = () => {
   const [isValid, setIsValid] = useState<boolean>(false);

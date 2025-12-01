@@ -1,33 +1,50 @@
 {
   "name": "@kaori-killer/modal-component",
-  "version": "1.0.14",
+  "version": "1.1.16",
   "description": "헤일리와 오거스가 개발한 모달 컴포넌트 라이브러리",
   "type": "module",
   "types": "dist/index.d.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ],
   "scripts": {
     "dev": "vite",
-    "build": "tsc && vite build",
+    "build": "npm run clean && tsc && vite build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "chromatic": "npx chromatic --project-token=chpt_6c307eea2feb92b"
+    "chromatic": "npx chromatic --project-token=chpt_6c307eea2feb92b",
+    "clean": "rm -rf dist"
   },
-  "dependencies": {
-    "@emotion/css": "^11.13.5",
-    "@emotion/react": "^11.14.0",
-    "@emotion/styled": "^11.14.0",
-    "@kaori-killer/modal-component": "^1.0.14",
+  "dependencies": {},
+  "peerDependencies": {
     "react": "^19.1.0",
-    "react-dom": "^19.1.0"
+    "react-dom": "^19.1.0",
+    "@emotion/css": "^11.13.5",
+    "@emotion/styled": "^11.14.0",
+    "@emotion/react": "^11.14.0"
   },
   "devDependencies": {
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "@emotion/css": "^11.13.5",
+    "@emotion/styled": "^11.14.0",
+    "@emotion/react": "^11.14.0",
     "@chromatic-com/storybook": "^3.2.6",
+    "@eslint/compat": "^1.2.9",
+    "@eslint/eslintrc": "^3.3.1",
+    "@eslint/js": "^9.26.0",
     "@storybook/addon-essentials": "^8.6.12",
     "@storybook/addon-interactions": "^8.6.12",
     "@storybook/addon-links": "^8.6.12",
@@ -48,6 +65,7 @@
     "eslint-plugin-react-hooks": "^5.2.0",
     "eslint-plugin-react-refresh": "^0.4.19",
     "eslint-plugin-storybook": "^0.12.0",
+    "globals": "^16.1.0",
     "path": "^0.12.7",
     "storybook": "^8.6.12",
     "typescript": "^5.8.3",
