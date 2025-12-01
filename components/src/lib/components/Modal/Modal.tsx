@@ -18,6 +18,8 @@ const Modal: ModalCompoundComponent = ({ children, onClose, ...props }) => {
   return (
     <>
       <StyledModal
+        role="dialog"
+        aria-modal="true"
         aria-labelledby="modal-title"
         aria-describedby="modal-description"
         {...props}

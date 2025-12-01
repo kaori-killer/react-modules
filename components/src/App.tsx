@@ -16,7 +16,7 @@ function App() {
             <Modal.CloseButton onClose={handleClose} />
           </Modal.Header>
           <Modal.Body>
-            <Modal.Input placeholder="쿠폰 번호 입력" />
+            <Modal.Input name="쿠폰 번호" placeholder="쿠폰 번호 입력" />
           </Modal.Body>
           <Modal.Footer direction="row" align="end" justify="center">
             <Modal.Button color="light" size="small">
