@@ -4,8 +4,15 @@
   "description": "헤일리와 오거스가 개발한 카드 유효성 검증 훅 라이브러리",
   "type": "module",
   "types": "dist/index.d.ts",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    }
+  },
   "files": [
     "dist"
   ],

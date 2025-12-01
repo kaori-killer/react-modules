@@ -8,15 +8,27 @@ export default defineConfig({
     lib: {
       entry: path.resolve(__dirname, "src/lib/index.ts"),
       name: "index",
-      fileName: "index",
+      fileName: (format) => {
+        if (format === "es") return "index.js";
+        if (format === "cjs") return "index.cjs";
+        return "index.umd.cjs";
+      },
+      formats: ["es", "cjs"],
     },
     rollupOptions: {
-      external: ["react"],
-      output: {
-        globals: {
-          react: "React",
+      external: ["react", "react-dom"],
+      output: [
+        {
+          format: "es",
+          entryFileNames: "index.js",
+          preserveModules: false,
         },
-      },
+        {
+          format: "cjs",
+          entryFileNames: "index.cjs",
+          preserveModules: false,
+        },
+      ],
     },
     commonjsOptions: {
       esmExternals: ["react"],
