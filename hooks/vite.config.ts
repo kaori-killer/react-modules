@@ -13,7 +13,6 @@ export default defineConfig({
         if (format === 'cjs') return 'index.cjs';
         return 'index.umd.cjs';
       },
-      formats: ['es', 'cjs']
     },
     rollupOptions: {
       external: ['react', 'react-dom'],
