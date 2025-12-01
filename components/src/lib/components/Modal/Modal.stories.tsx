@@ -143,7 +143,7 @@ export const Prompt: Story = {
               </Modal.Title>
             </Modal.Header>
             <Modal.Body>
-              <Modal.Input placeholder="쿠폰 번호 입력" />
+              <Modal.Input name="쿠폰 번호" placeholder="쿠폰 번호 입력" />
             </Modal.Body>
             <Modal.Footer direction="row" align="end" justify="end">
               <Modal.Button color="light" size="small">

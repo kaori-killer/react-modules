@@ -26,6 +26,7 @@ type Story = StoryObj<typeof meta>;
 export const Disabled: Story = {
   args: {
     placeholder: "비활성화된 입력",
+    name: "비활성화된 입력",
     disabled: true,
   },
 };
@@ -33,6 +34,7 @@ export const Disabled: Story = {
 export const WithValue: Story = {
   args: {
     placeholder: "쿠폰 번호 입력",
+    name: "쿠폰 번호",
     value: "COUPON123",
   },
 };
