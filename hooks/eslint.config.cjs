@@ -30,8 +30,7 @@ module.exports = defineConfig([
       compat.extends(
         "eslint:recommended",
         "plugin:@typescript-eslint/recommended",
-        "plugin:react-hooks/recommended",
-        "plugin:storybook/recommended"
+        "plugin:react-hooks/recommended"
       )
     ),
 
@@ -51,10 +50,9 @@ module.exports = defineConfig([
   globalIgnores([
     "**/dist/**",
     "**/node_modules/**",
-    "**/storybook-static/**",
     "**/.eslintrc.cjs",
-    "**/build-storybook.log",
     "**/*.config.cjs",
     "**/*.config.js",
+    "**/jest.config.cjs",
   ]),
 ]);
