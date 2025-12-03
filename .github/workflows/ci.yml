@@ -36,6 +36,9 @@ jobs:
       - name: 타입 체크
         run: npx tsc --noEmit -p tsconfig.app.json
 
+      - name: 스토리북 빌드 테스트
+        run: npm run build-storybook
+
       - name: 빌드 실행
         run: npm run build
 
